@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林燚 - 个人简历</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #4f46e5;
+        }
+        .timeline-line {
+            width: 2px;
+            background-color: #e2e8f0;
+        }
+        .skill-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .mobile-menu {
+            transform: scaleY(0);
+            transform-origin: top;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .mobile-menu.active {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold text-indigo-600">林燚</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors">个人简介</a>
+                <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors">工作经历</a>
+                <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition-colors">优势亮点</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors">项目经历</a>
+                <a href="#education" class="text-gray-600 hover:text-indigo-600 transition-colors">教育背景</a>
+                <a href="#podcast" class="text-gray-600 hover:text-indigo-600 transition-colors">播客</a>
+            </div>
+            <button class="md:hidden text-gray-600 focus:outline-none" id="mobileMenuButton">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu md:hidden bg-white shadow-lg" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2">
+                <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">个人简介</a>
+                <a href="#experience" class="block py-2 text-gray-600 hover:text-indigo-600">工作经历</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-indigo-600">优势亮点</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-indigo-600">项目经历</a>
+                <a href="#education" class="block py-2 text-gray-600 hover:text-indigo-600">教育背景</a>
+                <a href="#podcast" class="block py-2 text-gray-600 hover:text-indigo-600">播客</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页头 -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg mb-6 md:mb-0 md:mr-12">
+                <img src="https://coze-space-prod.tos-cn-beijing.volces.com/coze_space/7513850774841999360/upload/111.jpg?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTOGE1NGQ3OTEyMjZiNGYzYWI3OTYxYjZiYjVhY2MxZmY%2F20250610%2Fcn-beijing%2Ftos%2Frequest&X-Tos-Date=20250610T014806Z&X-Tos-Expires=2592000&X-Tos-Signature=a0c32354e2ccefeb787e5eed3f399126fd396129c86e6d18785cdb21347cd70d&X-Tos-SignedHeaders=host" alt="林燚" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">林燚</h1>
+                <h2 class="text-xl md:text-2xl font-medium mb-4">PERSONAL RESUME</h2>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span>17328762728</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>672768685@qq.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-weixin mr-2"></i>
+                        <span>linyi1992117</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 播客 -->
+        <section id="podcast" class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8 card-hover" style="width: 100%;">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-podcast"></i>
+                    </div>
+                    播客
+                </h2>
+                <p class="text-gray-700">点击下面的播放栏收听播客：</p>
+                <audio controls style="width: 100%;">
+                    <source src="https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/sami_podcast/tts/ec74b176bb054ee2b97121c0bbe945e8.mp3" type="audio/mpeg">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div>
+        </section>
+
+        <!-- 个人简介 -->
+        <section id="about" class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8 card-hover">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    个人简介
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 mb-4">资深ERP实施与项目管理专家，拥有8年ERP实施经验（金蝶、K3、KIS等）和3年项目管理经验，主导20+大型项目交付，成功率90%以上。</p>
+                        <p class="text-gray-700">精通财务、供应链、生产制造模块，擅长业财一体化方案设计，助力100+企业系统成功上线。熟练运用AI工具优化数据分析与决策流程，结合AI技术构建预测模型提升业务决策效率。</p>
+                    </div>
+                    <div>
+                        <div class="bg-indigo-50 rounded-lg p-4">
+                            <h3 class="font-semibold text-indigo-700 mb-2">职业目标</h3>
+                            <p class="text-gray-700">致力于通过ERP系统实施和AI技术应用，帮助企业实现数字化转型，优化业务流程，提升运营效率，创造更大商业价值。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 优势亮点 -->
+        <section id="skills" class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8 card-hover">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    优势亮点
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <h3 class="font-semibold">资深ERP实施与项目管理</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">8年ERP实施经验(金蝶、K3、KIS等)，3年项目管理经验，主导20+大型项目交付，成功率90%以上。</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <h3 class="font-semibold">AI驱动的业务优化</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">熟练运用AI工具(如deepseek平台)优化数据分析与决策流程，例如通过聚类算法识别成本异常点，精准定位问题环节，助力企业降本增效。</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <h3 class="font-semibold">全流程业务能力</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">精通财务、供应链、生产制造模块，擅长业财一体化方案设计，助力100+企业系统成功上线。</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <h3 class="font-semibold">数据分析与智能工具应用</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">精通SQL、FineBI、Power BI，结合AI技术构建预测模型(如销售预测、库存预警)，提升业务决策效率。</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <h3 class="font-semibold">跨部门协作与客户管理</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">服务超万家客户，深度挖掘需求，协同销售团队完成售前支持，推动月均业绩增长15万+。</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <h3 class="font-semibold">团队与体系建设</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">曾领导5人团队，搭建项目管理流程体系及知识库，优化实施方法论并推广至全事业部。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工作经历 -->
+        <section id="experience" class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8 card-hover">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    工作经历
+                </h2>
+                <div class="timeline relative">
+                    <div class="timeline-line absolute top-0 bottom-0 left-6 transform -translate-x-1/2"></div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">深圳市单仁牛商科技股份有限公司 - KA项目经理</h3>
+                                <p class="text-gray-600 text-sm mb-2">2024/06 - 至今</p>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>营销策略规划:依市场分析协同团队定营销策略，涵盖市场、品牌、产品、价格、渠道和促销策略，同时制定营销计划和预算，明确目标、行动、资源分配与 KPI。</li>
+                                    <li>客户分析与管理:构建客户画像和细分模型，洞察客户特征、需求、动机和价值，为针对性营销和客户关系管理出谋划策。</li>
+                                    <li>品牌管理支持:参与品牌战略规划，协助塑造与传播品牌形象，监督传播内容与渠道，维护品牌声誉。</li>
+                                    <li>项目统筹协调:负责项目整体管理，规划时间表、里程碑和交付成果，协调内外部各方资源，保障项目推进。</li>
+                                    <li>推荐企业营销数据化转型。</li>
+                                    <li>AI营销的应用。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">金蝶软件 - 实施顾问</h3>
+                                <p class="text-gray-600 text-sm mb-2">2016/04 - 2024/05</p>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>负责星辰、星空、K3、金蝶KIS等产品的交付工作，确保项目顺利实施上线，并获得客户高度认可，为后续订阅续费奠定良好基础。</li>
+                                    <li>主导财务、进销存及生产管理模块的交付，同时参与部分项目管理工作。</li>
+                                    <li>培训实施顾问新成员，提升团队整体交付效率与质量，成功实现预定目标。</li>
+                                    <li>建立并推广实施方法论至整个事业部，有效提升项目成功率。</li>
+                                    <li>助力超过100家客户成功上线系统，保持90%以上的高上线率。</li>
+                                    <li>为100多家客户提供金蝶系统全模块解决方案。</li>
+                                    <li>每月通过售前支持促进业绩增长达15万元。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">北京企景科技有限公司 - 实施顾问</h3>
+                                <p class="text-gray-600 text-sm mb-2">2015/03 - 2016/03</p>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>负责金蝶软件在央企大客户的日常运维工作，解答用户疑问并解决系统问题，确保系统稳定运行。</li>
+                                    <li>搜集并分析各部门对软件系统的改进建议和需求，通过二次开发等方式实现系统优化升级，满足业务发展需要。</li>
+                                    <li>撰写业务需求报告、软件开发文档以及用户操作手册，组织系统使用培训，提升用户操作水平与满意度。</li>
+                                    <li>积极参与客户ERP系统项目优化升级工作，助力提高服务质量和客户体验，为后续项目的拓展奠定基础。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目经历 -->
+        <section id="projects" class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8 card-hover">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    项目经历
+                </h2>
+                <div class="timeline relative">
+                    <div class="timeline-line absolute top-0 bottom-0 left-6 transform -translate-x-1/2"></div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">广东高仕捷清洁用品有限公司全域营销项目 - 大客户项目经理（单仁牛商）</h3>
+                                <p class="text-gray-600 text-sm mb-2">[项目时间区间待补充]</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目背景</h4>
+                                <p class="text-gray-700">客户为专业清洁用品供应商（广东高仕捷），面临线上获客成本高、渠道分散、转化率低等问题。单仁牛商作为咨询方，需为其搭建短视频（抖音/视频号） + 官网 + 电商平台全域营销体系，实现品效合一增长。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">核心挑战</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>多团队协同难：需统筹内容、投流、运营、数据等6个跨职能团队高效协作。</li>
+                                    <li>B端转化链路复杂：工业清洁品决策链条长，需设计从引流到成交的闭环路径。</li>
+                                    <li>效果验证压力大：客户要求短期内实现可量化的销售转化。</li>
+                                </ul>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">关键行动</h4>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">全域策略设计</h5>
+                                <p class="text-gray-700">定位短视频为引流核心（拍摄解决方案型内容），官网为信任中枢（突出资质/案例），电商为转化终端（开通样品申领入口）。</p>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">流程重构与执行</h5>
+                                <p class="text-gray-700">建立“内容创作→精准投放→数据监测→快速迭代”敏捷闭环，每日优化投放策略。重组客户转化路径：短视频挂载官网链接 → 官网嵌入电商跳转按钮 → CRM自动追踪复购。</p>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">资源整合管控</h5>
+                                <p class="text-gray-700">制定跨团队SOP，通过共享数据看板对齐目标，压缩决策周期50%。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目业绩</h4>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">直接业绩增长</h5>
+                                <p class="text-gray-700">项目期内促成新增成交额16.8万元（超客户预期68%）。搭建长效复购机制，带动持续性复购103万元（客户LTV提升3倍）。</p>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">运营效能提升</h5>
+                                <p class="text-gray-700">官网询盘量 +150%，短视频引流转化率 +40%。</p>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">客户高度认可</h5>
+                                <p class="text-gray-700">获客户CEO亲笔感谢信，称“全域策略精准匹配业务痛点”；授予锦旗“全域赋能提业绩，匠心服务树标杆”。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">氢辉能源(深圳)有限公司项目 - 实施顾问</h3>
+                                <p class="text-gray-600 text-sm mb-2">2024/03 - 2024/04</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目描述</h4>
+                                <p class="text-gray-700">项目背景:客户为南方科技大学教授创立的氢能源设备研发企业，需通过金蝶云系统实现财务、供应链、生产制造模块的业财一体化管理，核心需求为精准核算研发与生产成本，解决因流程混乱导致的数据重复录入与核算偏差问题。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">核心挑战</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>客户研发与生产部门职责交叉，领料流程无明确审批节点，导致成本归属混乱。</li>
+                                    <li>客户对系统上线周期要求严格，需在2个月内完成全模块配置与培训。</li>
+                                </ul>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目职责</h4>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">关键行动</h5>
+                                <p class="text-gray-700">流程重构:主导研发与生产流程分离，设计多级审批流(研发领料需部门负责人 + 财务双签批)，通过金蝶云动态表单实现单据自动分类；数据校准:搭建跨部门数据对齐模型，利用SQL脚本清洗历史数据，解决3年内的成本核算误差；敏捷交付:采用分阶段上线策略，优先完成核心模块(生产 + 财务)，2周内完成用户培训与压力测试，确保系统稳定性。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目业绩</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>系统按期上线，实现研发与生产成本核算准确率99%，人工核对时长减少20%。</li>
+                                    <li>输出《岗位职责清单》《业财一体化操作手册》等15份文档，客户复购后续优化项目。</li>
+                                    <li>获客户高层评价:“专业度远超预期，为行业解决方案树立标杆”。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">深圳市九洋洲实业有限公司项目 - 实施顾问</h3>
+                                <p class="text-gray-600 text-sm mb-2">2023/12 - 2024/01</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目描述</h4>
+                                <p class="text-gray-700">项目背景:客户为跨境电商企业，需将使用23年的金蝶KIS系统升级至金蝶云星空，并完成20家分公司数据迁移，同时优化供应链与合并报表流程。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">核心挑战</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>历史数据量庞大(超100万条)，且存在字段缺失、格式不兼容等问题。</li>
+                                    <li>客户业务涉及多币种结算，需重构财务模块以支持跨境税务合规。</li>
+                                </ul>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目职责</h4>
+                                <h5 class="text-base font-semibold text-indigo-700 mt-3">关键行动</h5>
+                                <p class="text-gray-700">数据迁移方案:使用脚本清洗数据，通过金蝶云数据迁移工具实现99.5%的数据完整率，关键字段(订单号、SKU) 100%匹配；流程优化:重新设计跨境电商业务流，对接第三方物流API，实现订单 - 发货 - 结算自动化，减少人工干预环节5个；风险管控:针对合并报表需求，搭建数据看板，实时监控子公司数据异常，提前规避合规风险。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目业绩</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>项目提前2周交付，客户月度报表生成效率提升60%。</li>
+                                    <li>数据迁移零丢失，客户年度IT预算节省15万元。</li>
+                                    <li>优化后系统支持日均处理订单量从1万单提升至3万单。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">中国进出口银行EAS运维项目 - 运维工程师</h3>
+                                <p class="text-gray-600 text-sm mb-2">2015/03 - 2016/03</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目描述</h4>
+                                <p class="text-gray-700">项目背景:中国进出口银行长期使用金蝶 eas 软件作为财务结算软件，并且业务系统做了二次开发转递数据进入 eas 系统，财务模块基本内容及二开数据传递需要专人维护。项目难点在于二次开发的数据传递经常出现问题需要运维人员人为传递并且客户对数据传递及时性要求极高。客户内部组织架构复杂，沟通成本较高。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目职责</h4>
+                                <p class="text-gray-700">担任 ERP 运维工程师，负责以下关键职责: 1. 日常监控和维护客户公司的 ERP 系统；2. 对系统性能进行定期评估，优化数据库查询；3. 参与新系统上线和升级项目，负责数据迁移和系统切换的无缝对接；4. 对用户遇到的问题提供技术支持，及时处理系统故障；5. 与开发团队紧密合作，反馈系统需求和优化建议；6. 编写运维报告和培训材料。</p>
+                                <h4 class="text-lg font-semibold text-indigo-700 mt-4">项目业绩</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>确保系统的稳定运行。</li>
+                                    <li>提高系统响应速度。</li>
+                                    <li>保障业务连续性。</li>
+                                    <li>推动系统功能的持续改进。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育经历 -->
+        <section id="education" class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8 card-hover">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    教育经历
+                </h2>
+                <div class="timeline relative">
+                    <div class="timeline-line absolute top-0 bottom-0 left-6 transform -translate-x-1/2"></div>
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-start">
+                            <div class="timeline-dot absolute left-6 transform -translate-x-1/2"></div>
+                            <div class="ml-12">
+                                <h3 class="text-xl font-semibold text-indigo-700">荆楚理工学院 - 财务管理（本科）</h3>
+                                <p class="text-gray-600 text-sm mb-2">2011/09 - 2015/06</p>
+                                <p class="text-gray-700">系统学习财务管理专业知识，掌握财务分析、预算管理、成本控制等技能，为从事财务相关工作奠定坚实基础。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 text-gray-600 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 林燚. 保留所有权利.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
